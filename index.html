@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invisible Bottleneck Detector — System Architecture & Product Blueprint</title>
+  <meta name="description" content="Technical overview, architectural pipeline, and step-by-step diagnostic blueprint for the Invisible Bottleneck Detector platform.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Background Ambience -->
+  <div class="glow-orb top-left" aria-hidden="true"></div>
+  <div class="glow-orb center-right" aria-hidden="true"></div>
+
+  <!-- Header & Navigation -->
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="brand">
+        <div class="brand-glyph" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">Invisible Bottleneck Detector</span>
+          <span class="brand-tag">Institutional Intelligence Platform</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#overview" class="nav-link active">Overview</a>
+        <a href="#workflow-adder" class="nav-link highlight-link">Workflow Adder &amp; Analyzer</a>
+        <a href="#taxonomy" class="nav-link">Taxonomy</a>
+        <a href="#framework" class="nav-link">5-Question Engine</a>
+        <a href="#modules" class="nav-link">System Modules</a>
+        <a href="#architecture" class="nav-link">Data Pipeline</a>
+        <a href="#security" class="nav-link">Tenancy &amp; Security</a>
+        <a href="#techstack" class="nav-link">Tech Architecture</a>
+      </nav>
+      <div class="header-cta">
+        <a href="#workflow-adder" class="badge-status-link">
+          <span class="pulse-dot"></span>
+          Interactive Analyzer
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="overview">
+    <div class="container hero-container">
+      <div class="hero-eyebrow">
+        <span>Strategic Product Blueprint</span>
+        <span class="divider">/</span>
+        <span>Colleges &amp; Corporate Enterprises</span>
+      </div>
+      <h1 class="hero-headline">
+        Explainable, Actionable<br>
+        Bottleneck Intelligence.
+      </h1>
+      <p class="hero-subline">
+        Moving beyond passive dashboard telemetry. The Invisible Bottleneck Detector continuously extracts telemetry across applications, compute infrastructure, and organizational workflows to pinpoint systemic stalls, formulate probabilistic root causes, prescribe remediations, and validate fixes.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#workflow-adder" class="btn btn-hero-primary">
+          <span>Manual Workflow Adder &amp; Analyzer</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <a href="#framework" class="btn btn-hero-secondary">
+          <span>Explore 5-Question Engine</span>
+        </a>
+      </div>
+
+      <div class="quick-stats-strip">
+        <div class="stat-cell">
+          <span class="stat-number">2-Tier</span>
+          <span class="stat-label">Domain Coverage (Technical &amp; Operational)</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-number">5-Stage</span>
+          <span class="stat-label">Closed-Loop Diagnostic Lifecycle</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Dedicated Intelligence Modules</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Zero-Knowledge Multi-Tenant Isolation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Problem Space & Taxonomy -->
+  <section class="section" id="taxonomy">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Problem Classification</span>
+        <h2 class="section-title">The Dual-Domain Bottleneck Problem Space</h2>
+        <p class="section-desc">
+          Colleges and corporate offices operate with two distinct categories of latency that cannot be addressed using identical diagnostic instrumentation or analytical logic.
+        </p>
+      </div>
+
+      <div class="two-column-grid">
+        <!-- Domain 1 -->
+        <div class="card glass-card">
+          <div class="card-badge">Domain 01</div>
+          <h3 class="card-title">Technical Bottlenecks</h3>
+          <p class="card-lead">Microsecond to second-level friction embedded across computing infrastructure, storage layers, and network backbones.</p>
+          
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+              </div>
+              <div class="feature-content">
+                <strong>Application &amp; Service Stalls</strong>
+                <span>Thread starvation, garbage collection pauses, blocking I/O calls, unindexed queries, and downstream API timeout cascades.</span>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              </div>
+              <div class="feature-content">
+                <strong>Database &amp; Connection Contention</strong>
+                <span>Pool exhaustion, read-write lock contention, long-running transactions, lock escalation, and buffer pool churn.</span>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+              </div>
+              <div class="feature-content">
+                <strong>Network &amp; Edge Infrastructure</strong>
+                <span>Access point saturation, rogue channel interference, packet drop bursts, asymmetric routing, and DNS resolution latency.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer-meta">
+            <span>Telemetry Source:</span>
+            <code>Metrics (Prometheus) · Distributed Traces (OTel) · System Logs</code>
+          </div>
+        </div>
+
+        <!-- Domain 2 -->
+        <div class="card glass-card">
+          <div class="card-badge">Domain 02</div>
+          <h3 class="card-title">Operational Bottlenecks</h3>
+          <p class="card-lead">Hour to week-level friction across organizational handoffs, approval hierarchies, and human resource routing queues.</p>
+          
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div class="feature-content">
+                <strong>Sequential Approval Stagnation</strong>
+                <span>Single-signatory gatekeepers, multi-tier compliance queues, unnotified pending reviews, and out-of-office stalls.</span>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              </div>
+              <div class="feature-content">
+                <strong>Administrative Queue Accumulation</strong>
+                <span>Student verification backlogs, IT helpdesk re-assignment ping-pong, manual document validation, and procurement freezes.</span>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div class="feature-content">
+                <strong>Resource Allocation Asymmetry</strong>
+                <span>Departmental load skew where critical administrative nodes face overwhelming inbound demand without dynamic load shedding.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer-meta">
+            <span>Telemetry Source:</span>
+            <code>Process Timestamps · State Machine Logs · Audit Trails · Ticket Histories</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The 5-Question Engine -->
+  <section class="section" id="framework">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Core Value Proposition</span>
+        <h2 class="section-title">The 5-Question Explainability Engine</h2>
+        <p class="section-desc">
+          Conventional APM suites display arbitrary time-series charts without context. The Invisible Bottleneck Detector structures every single finding around a rigorous, 5-stage investigative lifecycle.
+        </p>
+      </div>
+
+      <!-- Interactive Stepper Component -->
+      <div class="stepper-wrapper">
+        <div class="stepper-nav" role="tablist">
+          <button class="step-btn active" data-step="1">
+            <span class="step-num">01</span>
+            <span class="step-title">What is the problem?</span>
+          </button>
+          <button class="step-btn" data-step="2">
+            <span class="step-num">02</span>
+            <span class="step-title">What is the evidence?</span>
+          </button>
+          <button class="step-btn" data-step="3">
+            <span class="step-num">03</span>
+            <span class="step-title">What is the likely cause?</span>
+          </button>
+          <button class="step-btn" data-step="4">
+            <span class="step-num">04</span>
+            <span class="step-title">What should we do next?</span>
+          </button>
+          <button class="step-btn" data-step="5">
+            <span class="step-num">05</span>
+            <span class="step-title">Did it work?</span>
+          </button>
+        </div>
+
+        <div class="step-content-viewport">
+          <!-- Step 1 Panel -->
+          <div class="step-panel active" id="step-panel-1">
+            <div class="step-panel-inner">
+              <div class="step-badge">Stage 01 · Precise Identification</div>
+              <h3 class="panel-headline">Isolating the Affected System or Process Boundary</h3>
+              <p class="panel-text">
+                Rather than emitting general threshold alerts, the system isolates the exact architectural component, service endpoint, physical hardware node, or organizational workflow stage experiencing degraded throughput.
+              </p>
+              <div class="panel-specs-grid">
+                <div class="spec-card">
+                  <h4>Component Localization</h4>
+                  <p>Identifies whether latency originates in the presentation layer, application runtime, message bus, persistence layer, or human approval step.</p>
+                </div>
+                <div class="spec-card">
+                  <h4>Impact Quantification</h4>
+                  <p>Measures aggregate request degradation, volume of affected institutional users, and severity relative to operational SLAs.</p>
+                </div>
+                <div class="spec-card">
+                  <h4>Temporal Boundary</h4>
+                  <p>Records exact onset timestamp, periodicity (e.g., peak registration bursts, shift-change hours), and progression velocity.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 Panel -->
+          <div class="step-panel" id="step-panel-2">
+            <div class="step-panel-inner">
+              <div class="step-badge">Stage 02 · Quantitative Proof</div>
+              <h3 class="panel-headline">Aggregating Correlated Telemetry &amp; Trace Evidence</h3>
+              <p class="panel-text">
+                Every diagnosis is backed by mathematical proof. The platform aggregates metrics, spans, and queue distributions that deviate from established historical baselines.
+              </p>
+              <div class="panel-specs-grid">
+                <div class="spec-card">
+                  <h4>Distributed Tracing Spans</h4>
+                  <p>Extracts OpenTelemetry spans showcasing parent-child execution latency and identifies the exact sub-span where wall-clock time stalled.</p>
+                </div>
+                <div class="spec-card">
+                  <h4>Metric Statistical Deviations</h4>
+                  <p>Calculates Z-scores, p95/p99 latency percentiles, queue length growth rates, and resource utilization counters (CPU, RAM, I/O, Connections).</p>
+                </div>
+                <div class="spec-card">
+                  <h4>Handoff Timestamp Differentials</h4>
+                  <p>Measures delta between task creation, queue assignment, active review initiation, and final sign-off state transitions.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 Panel -->
+          <div class="step-panel" id="step-panel-3">
+            <div class="step-panel-inner">
+              <div class="step-badge">Stage 03 · Probabilistic Hypothesis</div>
+              <h3 class="panel-headline">Ranking Plausible Causes with Calibrated Uncertainty</h3>
+              <p class="panel-text">
+                Avoids black-box assertions. The diagnostic engine evaluates competing hypotheses against known system dependency models and outputs confidence scores with explicit uncertainty boundaries.
+              </p>
+              <div class="panel-specs-grid">
+                <div class="spec-card">
+                  <h4>Probabilistic Ranking</h4>
+                  <p>Calculates likelihood scores across competing failure modes (e.g., connection starvation vs. thread lock vs. external dependency timeout).</p>
+                </div>
+                <div class="spec-card">
+                  <h4>Explicit Uncertainty Reporting</h4>
+                  <p>States missing data points, sensor gaps, or uninstrumented third-party services that prevent absolute deterministic certainty.</p>
+                </div>
+                <div class="spec-card">
+                  <h4>Dependency Graph Traversal</h4>
+                  <p>Cross-references causal graphs to ensure a downstream symptom is not misdiagnosed as the primary root cause.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4 Panel -->
+          <div class="step-panel" id="step-panel-4">
+            <div class="step-panel-inner">
+              <div class="step-badge">Stage 04 · Prescriptive Protocol</div>
+              <h3 class="panel-headline">Recommending Specific Diagnostic &amp; Corrective Steps</h3>
+              <p class="panel-text">
+                Replaces vague alarms with explicit, sequential playbooks tailored to system operators, database engineers, or departmental administrators.
+              </p>
+              <div class="panel-specs-grid">
+                <div class="spec-card">
+                  <h4>Immediate Verification Protocols</h4>
+                  <p>Directs engineers to inspect specific configuration parameters, thread dumps, query execution plans, or pending queue tables.</p>
+                </div>
+                <div class="spec-card">
+                  <h4>Prescriptive Remediation</h4>
+                  <p>Provides exact mitigation steps (e.g., pool resizing, index creation, queue sharding, secondary approver delegation rules).</p>
+                </div>
+                <div class="spec-card">
+                  <h4>Operational Safeguards</h4>
+                  <p>Highlights non-destructive validation steps to prevent hasty restarts or unvalidated schema changes in production.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 5 Panel -->
+          <div class="step-panel" id="step-panel-5">
+            <div class="step-panel-inner">
+              <div class="step-badge">Stage 05 · Closed-Loop Validation</div>
+              <h3 class="panel-headline">Automated Pre- and Post-Remediation Verification</h3>
+              <p class="panel-text">
+                Unlike passive tools that assume an alert resolution means success, the system enforces a closed-loop validation cycle that compares workload response before and after the applied fix.
+              </p>
+              <div class="panel-specs-grid">
+                <div class="spec-card">
+                  <h4>Comparative Workload Analysis</h4>
+                  <p>Compares latency curves, queue clearance rates, and resource utilization across identical traffic or request volumes post-change.</p>
+                </div>
+                <div class="spec-card">
+                  <h4>Statistical Significance Testing</h4>
+                  <p>Applies two-sample hypothesis testing to ensure observed performance improvements are genuine and not random statistical noise.</p>
+                </div>
+                <div class="spec-card">
+                  <h4>Institutional Memory Storage</h4>
+                  <p>Encodes validated remedies into the tenant knowledge base to accelerate resolution if similar systemic signatures reoccur.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Workflow Adder & Bottleneck Analyzer -->
+  <section class="section" id="workflow-adder">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Interactive Diagnostic Suite</span>
+        <h2 class="section-title">Workflow Adder &amp; Bottleneck Analyzer</h2>
+        <p class="section-desc">
+          Manually enter each step in your institutional process—including the work title, description, sender, receiver, destination, and duration. Build the sequential workflow to automatically detect the critical bottleneck and generate actionable prevention playbooks.
+        </p>
+      </div>
+
+      <!-- Main Workflow Grid -->
+      <div class="workflow-workbench">
+        <!-- Step Builder Card -->
+        <div class="card glass-card workflow-form-card">
+          <div class="card-badge">Step Ingestion</div>
+          <h3 class="card-title">Add Process Step</h3>
+          <p class="card-lead">Enter the operational or technical attributes for each stage in your sequence.</p>
+
+          <form id="workflow-step-form" class="workflow-form" onsubmit="return false;">
+            <div class="form-group">
+              <label for="step-work">Work / Process Name <span class="required-star">*</span></label>
+              <input type="text" id="step-work" class="form-control" placeholder="e.g. Document Verification, API Gateway Auth, Stamp Sign-off" required autocomplete="off">
+            </div>
+
+            <div class="form-group">
+              <label for="step-desc">Description <span class="required-star">*</span></label>
+              <textarea id="step-desc" class="form-control" rows="2" placeholder="Details of this task, inspection, or processing operation..." required></textarea>
+            </div>
+
+            <div class="form-row two-cols">
+              <div class="form-group">
+                <label for="step-sender">Who's the Sender? <span class="required-star">*</span></label>
+                <input type="text" id="step-sender" class="form-control" placeholder="e.g. Student Desk / Service A / Registrar" required autocomplete="off">
+              </div>
+              <div class="form-group">
+                <label for="step-receiver">Who's the Receiver? <span class="required-star">*</span></label>
+                <input type="text" id="step-receiver" class="form-control" placeholder="e.g. Academic Auditor / Microservice B" required autocomplete="off">
+              </div>
+            </div>
+
+            <div class="form-row two-cols">
+              <div class="form-group">
+                <label for="step-destination">Where is it Going to? <span class="required-star">*</span></label>
+                <input type="text" id="step-destination" class="form-control" placeholder="e.g. Room 204 Admin / DB Cluster / Archive" required autocomplete="off">
+              </div>
+              <div class="form-group">
+                <label for="step-modality">Process Medium / Type</label>
+                <select id="step-modality" class="form-control">
+                  <option value="digital">Computer / Digital Process</option>
+                  <option value="offline">Offline / Paper Process</option>
+                  <option value="hybrid">Hybrid / Physical Desk Counter</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="step-duration-val">How Much Time Did It Take? <span class="required-star">*</span></label>
+              <div class="duration-input-cluster">
+                <input type="number" id="step-duration-val" class="form-control duration-val" min="0.1" step="any" placeholder="e.g. 45" required>
+                <select id="step-duration-unit" class="form-control duration-unit">
+                  <option value="minutes">Minutes</option>
+                  <option value="hours" selected>Hours</option>
+                  <option value="days">Days</option>
+                  <option value="seconds">Seconds</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" id="add-step-btn" class="btn btn-action-primary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <span>Add Step to Workflow</span>
+              </button>
+              <button type="button" id="clear-form-btn" class="btn btn-action-ghost">Clear Fields</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Assembled Workflow Visualizer & Action Panel -->
+        <div class="card glass-card workflow-display-card">
+          <div class="display-header">
+            <div>
+              <div class="card-badge">Workflow Queue</div>
+              <h3 class="card-title">Assembled Process Sequence</h3>
+            </div>
+            <div class="workflow-meta-pill">
+              <span id="steps-counter">0 Steps Added</span>
+            </div>
+          </div>
+
+          <!-- Empty State -->
+          <div id="workflow-empty-state" class="workflow-empty-state">
+            <div class="empty-icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+            </div>
+            <h4>No process steps in the workflow yet</h4>
+            <p>Use the form on the left to manually input the work title, description, sender, receiver, destination, and duration for each step in your process.</p>
+          </div>
+
+          <!-- Populated Steps Container -->
+          <div id="workflow-steps-list" class="workflow-steps-list" style="display: none;"></div>
+
+          <!-- Workflow Global Controls Bar -->
+          <div id="workflow-controls-bar" class="workflow-controls-bar" style="display: none;">
+            <div class="lead-time-stat">
+              <span class="lead-time-label">Cumulative Lead Time:</span>
+              <span id="total-lead-time-display" class="lead-time-val">0 hrs</span>
+            </div>
+            <div class="controls-actions">
+              <button type="button" id="analyze-bottlenecks-btn" class="btn btn-analyze">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <span>Analyze &amp; Detect Bottlenecks</span>
+              </button>
+              <button type="button" id="reset-workflow-btn" class="btn btn-action-ghost">Reset All</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottleneck Analysis & Prevention Results (Dynamically populated) -->
+      <div id="bottleneck-analysis-results" class="bottleneck-results-section" style="display: none;">
+        <!-- Injected via JavaScript upon analysis -->
+      </div>
+    </div>
+  </section>
+
+  <!-- The 3 Product Modules -->
+  <section class="section" id="modules">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Modular Blueprint</span>
+        <h2 class="section-title">The Three Platform Modules</h2>
+        <p class="section-desc">
+          Structured into three specialized intelligence layers that share an underlying correlation engine but maintain dedicated ingestion and analytical pipelines.
+        </p>
+      </div>
+
+      <div class="modules-stack">
+        <!-- Module 1 -->
+        <div class="module-card">
+          <div class="module-header">
+            <div class="module-status-badge active-module">Initial Product Release · Module 01</div>
+            <h3 class="module-title">IT Bottleneck Intelligence</h3>
+            <p class="module-summary">
+              Monitors authorized applications, compute instances, database engines, and network layers. Correlates telemetry to detect anomalies, isolate contention points, and prescribe corrective engineering actions.
+            </p>
+          </div>
+
+          <div class="module-steps-grid">
+            <div class="substep-card">
+              <span class="substep-num">Step 1</span>
+              <h4>Telemetry Ingestion</h4>
+              <p>Collects vendor-neutral OpenTelemetry traces, Prometheus metrics, and system logs across authorized microservices, JVMs, runtime containers, and databases.</p>
+            </div>
+
+            <div class="substep-card">
+              <span class="substep-num">Step 2</span>
+              <h4>Dynamic Baseline Engine</h4>
+              <p>Constructs continuous rolling statistical baselines (p50, p95, p99) that adapt to cyclical college or corporate operational shifts (peak hours, weekend quiescence).</p>
+            </div>
+
+            <div class="substep-card">
+              <span class="substep-num">Step 3</span>
+              <h4>Trace Graph Correlation</h4>
+              <p>Traverses distributed trace DAGs to calculate self-time versus downstream wait-time, isolating resource starvation from cascading upstream backpressure.</p>
+            </div>
+
+            <div class="substep-card">
+              <span class="substep-num">Step 4</span>
+              <h4>Contention Hypothesis Generator</h4>
+              <p>Evaluates resource footprints against telemetry signatures to differentiate between memory leaks, CPU saturation, database connection lockups, and network drops.</p>
+            </div>
+
+            <div class="substep-card">
+              <span class="substep-num">Step 5</span>
+              <h4>Remediation Prescription &amp; Validation</h4>
+              <p>Delivers diagnostic playbooks to site reliability engineers and monitors post-deployment execution telemetry to prove latency eradication.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Module 2 -->
+        <div class="module-card">
+          <div class="module-header">
+            <div class="module-status-badge planned-module">Expansion Stage · Module 02</div>
+            <h3 class="module-title">Workflow Bottleneck Intelligence</h3>
+            <p class="module-summary">
+              Ingests anonymized state transition records and timestamped process logs to uncover systemic latency across business handoffs, support queues, and document approval hierarchies.
+            </p>
+          </div>
+
+          <div class="module-steps-grid">
+            <div class="substep-card">
+              <span class="substep-num">Step 1</span>
+              <h4>Audit Trail Ingestion</h4>
+              <p>Pulls anonymized process events (ticket ID, stage ID, timestamp, department tag) via secure read-only webhooks from ticketing and ERP platforms.</p>
+            </div>
+
+            <div class="substep-card">
+              <span class="substep-num">Step 2</span>
+              <h4>Wait Time Decomposition</h4>
+              <p>Decomposes end-to-end task turnaround time into active processing duration versus inactive queue dwell duration to isolate bureaucratic stagnation.</p>
+            </div>
+
+            <div class="substep-card">
+              <span class="substep-num">Step 3</span>
+              <h4>Handoff Friction Analysis</h4>
+              <p>Identifies multi-party transfer friction, analyzing cross-departmental ping-pong where tasks bounce repeatedly without meaningful progression.</p>
+            </div>
+
+            <div class="substep-card">
+              <span class="substep-num">Step 4</span>
+              <h4>Routing &amp; Capacity Profiling</h4>
+              <p>Detects structural dependencies where specialized approval nodes or single departmental officers represent single-point-of-failure bottlenecks.</p>
+            </div>
+
+            <div class="substep-card">
+              <span class="substep-num">Step 5</span>
+              <h4>Workflow Restructuring Guidance</h4>
+              <p>Recommends procedural parallelization, fallback signatory triggers, dynamic load shedding, and escalation rules with measurable SLA impact modeling.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Module 3 -->
+        <div class="module-card">
+          <div class="module-header">
+            <div class="module-status-badge planned-module">Strategic Enterprise Stage · Module 03</div>
+            <h3 class="module-title">Organization Intelligence</h3>
+            <p class="module-summary">
+              Provides executive administrators and IT directors with an aggregated institutional view of chronic operational friction, resource constraints, recurring incidents, and investment priorities.
+            </p>
+          </div>
+
+          <div class="module-steps-grid">
+            <div class="substep-card">
+              <span class="substep-num">Step 1</span>
+              <h4>Cross-Department Telemetry Synthesis</h4>
+              <p>Aggregates finding metadata across all sub-systems into an institutional topological graph without exposing sensitive internal payload data.</p>
+            </div>
+
+            <div class="substep-card">
+              <span class="substep-num">Step 2</span>
+              <h4>Chronic Recurrence Tracking</h4>
+              <p>Identifies persistent bottlenecks that reappear on seasonal schedules (semester enrollment, quarterly fiscal closings, onboarding cycles).</p>
+            </div>
+
+            <div class="substep-card">
+              <span class="substep-num">Step 3</span>
+              <h4>Systemic Degeneracy Indexing</h4>
+              <p>Calculates institutional health scores reflecting how technical downtime directly degrades employee productivity or student administrative experience.</p>
+            </div>
+
+            <div class="substep-card">
+              <span class="substep-num">Step 4</span>
+              <h4>Infrastructure Capacity Forecasting</h4>
+              <p>Forecasts when computing nodes, storage arrays, or administrative staffing thresholds will breach operational failure limits under projected growth.</p>
+            </div>
+
+            <div class="substep-card">
+              <span class="substep-num">Step 5</span>
+              <h4>Capital &amp; Architecture Advisory</h4>
+              <p>Provides institutional leadership with objective, data-backed guidance on whether bottlenecks require architectural refactoring or hardware expansion.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete End-to-End Pipeline -->
+  <section class="section" id="architecture">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">System Pipeline</span>
+        <h2 class="section-title">End-to-End Architectural Pipeline</h2>
+        <p class="section-desc">
+          How data flows step-by-step from raw institutional telemetry to explainable diagnostic intelligence and tenant-isolated executive dashboards.
+        </p>
+      </div>
+
+      <!-- Architectural Data Flow Diagram -->
+      <div class="architecture-flow-container">
+        <div class="pipeline-flow">
+          <!-- Stage 1 -->
+          <div class="pipeline-node">
+            <div class="node-step">01</div>
+            <div class="node-box">
+              <span class="node-type">Instrumentation Layer</span>
+              <h4 class="node-title">Telemetry Collection</h4>
+              <ul class="node-details">
+                <li>OpenTelemetry SDKs (App Traces)</li>
+                <li>Prometheus Node &amp; SQL Exporters</li>
+                <li>Syslog / Journald Collectors</li>
+                <li>Workflow Audit Webhook Emitters</li>
+              </ul>
+            </div>
+            <div class="node-arrow" aria-hidden="true">&rarr;</div>
+          </div>
+
+          <!-- Stage 2 -->
+          <div class="pipeline-node">
+            <div class="node-step">02</div>
+            <div class="node-box">
+              <span class="node-type">Ingestion &amp; Scrubbing</span>
+              <h4 class="node-title">Secure Edge Gateway</h4>
+              <ul class="node-details">
+                <li>mTLS Authentication &amp; Token Auth</li>
+                <li>PII &amp; Payload Scrubbing Filter</li>
+                <li>Tenant Header Validation</li>
+                <li>Asynchronous Message Queue Buffer</li>
+              </ul>
+            </div>
+            <div class="node-arrow" aria-hidden="true">&rarr;</div>
+          </div>
+
+          <!-- Stage 3 -->
+          <div class="pipeline-node">
+            <div class="node-step">03</div>
+            <div class="node-box">
+              <span class="node-type">Analytical Computation</span>
+              <h4 class="node-title">Intelligence Engine</h4>
+              <ul class="node-details">
+                <li>Rolling Baseline Calculation (NumPy)</li>
+                <li>KDE Anomaly Detection (scikit-learn)</li>
+                <li>Span Graph Traversal &amp; Attribution</li>
+                <li>Queue Time Differential Decomposition</li>
+              </ul>
+            </div>
+            <div class="node-arrow" aria-hidden="true">&rarr;</div>
+          </div>
+
+          <!-- Stage 4 -->
+          <div class="pipeline-node">
+            <div class="node-step">04</div>
+            <div class="node-box">
+              <span class="node-type">Inference &amp; Reasoning</span>
+              <h4 class="node-title">Diagnostic Core</h4>
+              <ul class="node-details">
+                <li>Hypothesis Scoring &amp; Ranking</li>
+                <li>Uncertainty Confidence Interval</li>
+                <li>Prescriptive Playbook Matching</li>
+                <li>Pre/Post Verification Validator</li>
+              </ul>
+            </div>
+            <div class="node-arrow" aria-hidden="true">&rarr;</div>
+          </div>
+
+          <!-- Stage 5 -->
+          <div class="pipeline-node">
+            <div class="node-step">05</div>
+            <div class="node-box">
+              <span class="node-type">Presentation &amp; Control</span>
+              <h4 class="node-title">Tenant Portal &amp; APIs</h4>
+              <ul class="node-details">
+                <li>FastAPI Microservice Gateway</li>
+                <li>Row-Level Security (PostgreSQL)</li>
+                <li>React + TypeScript UI Portal</li>
+                <li>Webhook Alert Emitters (Slack/Email)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security, Multi-Tenancy & Data Governance -->
+  <section class="section" id="security">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Enterprise Rigor</span>
+        <h2 class="section-title">Multi-Tenancy, Privacy &amp; Data Governance</h2>
+        <p class="section-desc">
+          Designed specifically for educational institutions and corporations with strict compliance mandates, FERPA/GDPR requirements, and confidentiality boundaries.
+        </p>
+      </div>
+
+      <div class="three-column-grid">
+        <div class="card glass-card">
+          <div class="card-icon-pill">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="card-title">Tenant Data Isolation</h3>
+          <p class="card-body-text">
+            Strict isolation boundaries guarantee that College A can never view College B's telemetry, and Corporate Client X can never access Client Y's diagnostic records.
+          </p>
+          <ul class="checklist">
+            <li>PostgreSQL Row-Level Security (RLS) enforcement</li>
+            <li>Tenant-specific encryption keys via Vault/KMS</li>
+            <li>Separate database schema / dedicated DB option</li>
+            <li>Cross-tenant leakage prevention assertions</li>
+          </ul>
+        </div>
+
+        <div class="card glass-card">
+          <div class="card-icon-pill">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+          </div>
+          <h3 class="card-title">Zero-Surveillance Architecture</h3>
+          <p class="card-body-text">
+            Built strictly for systemic diagnostic health. The software is architected from first principles to prohibit employee surveillance and unauthorized data capture.
+          </p>
+          <ul class="checklist">
+            <li>Zero message contents or document payload collection</li>
+            <li>Zero keystroke, screen, or mouse tracking mechanisms</li>
+            <li>Automatic cryptographic hashing of human identifiers</li>
+            <li>Exclusive focus on system metrics &amp; event timestamps</li>
+          </ul>
+        </div>
+
+        <div class="card glass-card">
+          <div class="card-icon-pill">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3 class="card-title">Flexible Deployment Models</h3>
+          <p class="card-body-text">
+            Accommodates diverse compliance standards across public university systems, defense contractors, and private banking enterprises.
+          </p>
+          <ul class="checklist">
+            <li>Fully managed multi-tenant SaaS deployment</li>
+            <li>Air-gapped on-premises appliance for high security</li>
+            <li>Customer-controlled Virtual Private Cloud (VPC)</li>
+            <li>Configurable data retention &amp; automatic purge rules</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Stack & Implementation Roadmap -->
+  <section class="section" id="techstack">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Engineering Blueprint</span>
+        <h2 class="section-title">Technology Stack &amp; Phased Execution</h2>
+        <p class="section-desc">
+          Built on battle-tested open-source foundational protocols to maximize vendor neutrality, performance, and institutional interoperability.
+        </p>
+      </div>
+
+      <!-- Tech Stack Matrix -->
+      <div class="tech-table-container">
+        <table class="tech-table">
+          <thead>
+            <tr>
+              <th>Layer</th>
+              <th>Chosen Technology</th>
+              <th>Architectural Role</th>
+              <th>Strategic Selection Rationale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="tech-tag">Frontend</span></td>
+              <td><strong>React + TypeScript</strong></td>
+              <td>Single-Page Diagnostic Web Console</td>
+              <td>Type safety, component reusability, rich chart rendering capability, high responsive performance.</td>
+            </tr>
+            <tr>
+              <td><span class="tech-tag">Backend APIs</span></td>
+              <td><strong>Python + FastAPI</strong></td>
+              <td>Core Ingestion &amp; Diagnostic Services</td>
+              <td>Native asynchronous I/O, automated OpenAPI docs, seamless integration with Python analytical libraries.</td>
+            </tr>
+            <tr>
+              <td><span class="tech-tag">Metrics Collector</span></td>
+              <td><strong>Prometheus</strong></td>
+              <td>High-throughput Time Series Storage</td>
+              <td>Industry standard for server, container, database, and infrastructure metric scraping and querying.</td>
+            </tr>
+            <tr>
+              <td><span class="tech-tag">Instrumentation</span></td>
+              <td><strong>OpenTelemetry</strong></td>
+              <td>Vendor-Neutral Tracing &amp; Metrics</td>
+              <td>Prevents proprietary lock-in; instruments code across Java, Python, Go, Node.js, and .NET.</td>
+            </tr>
+            <tr>
+              <td><span class="tech-tag">Detection Engine</span></td>
+              <td><strong>pandas, NumPy, scikit-learn</strong></td>
+              <td>Statistical Baselines &amp; Anomaly Inference</td>
+              <td>Fast vectorized rolling window statistics, clustering, correlation matrices, and distribution scoring.</td>
+            </tr>
+            <tr>
+              <td><span class="tech-tag">Primary Storage</span></td>
+              <td><strong>PostgreSQL</strong></td>
+              <td>Relational Metadata &amp; Findings DB</td>
+              <td>Robust ACID compliance, native JSONB support, robust Row-Level Security for strict multi-tenancy.</td>
+            </tr>
+            <tr>
+              <td><span class="tech-tag">Background Tasks</span></td>
+              <td><strong>Celery / Redis</strong></td>
+              <td>Asynchronous Anomaly Processing</td>
+              <td>Decouples computationally heavy trace analysis and baseline recalibration from API request threads.</td>
+            </tr>
+            <tr>
+              <td><span class="tech-tag">Containerization</span></td>
+              <td><strong>Docker &amp; Docker Compose</strong></td>
+              <td>Reproducible Packaging &amp; Delivery</td>
+              <td>Enables rapid single-node evaluation setups and clean customer-controlled on-prem deployment.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Step-by-Step Engineering Roadmap -->
+      <div class="roadmap-wrapper">
+        <h3 class="roadmap-title">Step-by-Step Execution Roadmap</h3>
+        <div class="roadmap-timeline">
+          <div class="timeline-step">
+            <div class="timeline-marker">Phase 1</div>
+            <div class="timeline-content">
+              <h4>Module 1 Foundation: Minimal Viable Diagnostic Loop</h4>
+              <p>
+                Implement end-to-end ingestion pipeline: OpenTelemetry tracing receiver, Prometheus metric scraper, FastAPI backend, and PostgreSQL database. Create the baseline statistical engine (EWMA &amp; percentile calculators) and construct the 5-Question finding report UI.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-marker">Phase 2</div>
+            <div class="timeline-content">
+              <h4>Inference Refinement &amp; Multi-Tenant Hardening</h4>
+              <p>
+                Train and calibrate root-cause hypothesis ranking algorithms using dependency graph analysis. Implement strict PostgreSQL Row-Level Security, tenant provisioning flows, and role-based access control (RBAC).
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-marker">Phase 3</div>
+            <div class="timeline-content">
+              <h4>Module 2 Expansion: Workflow Bottleneck Intelligence</h4>
+              <p>
+                Introduce generic state-transition schema for process event logs. Build queue dwell vs active processing decomposition calculators and multi-party handoff friction graphs.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-marker">Phase 4</div>
+            <div class="timeline-content">
+              <h4>Module 3 Delivery: Institutional &amp; Executive Intelligence</h4>
+              <p>
+                Deploy cross-department aggregation rollups, seasonal trend detection, capacity breach forecasting models, and executive SLA impact reporting suites.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <span class="footer-brand">Invisible Bottleneck Detector</span>
+        <span class="footer-copy">&copy; 2026 Production Blueprint. Designed with San Francisco typography on deep black.</span>
+      </div>
+      <div class="footer-right">
+        <span class="footer-tag">Institutional Diagnostic Intelligence Specification</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
